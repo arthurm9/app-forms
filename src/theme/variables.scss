@@ -2,7 +2,23 @@
 // http://ionicframework.com/docs/theming/
 
 /** Ionic CSS Variables **/
+.ion-color-cinza {
+	--ion-color-base: var(--ion-color-cinza);
+	--ion-color-base-rgb: var(--ion-color-cinza-rgb);
+	--ion-color-contrast: var(--ion-color-cinza-contrast);
+	--ion-color-contrast-rgb: var(--ion-color-cinza-contrast-rgb);
+	--ion-color-shade: var(--ion-color-cinza-shade);
+	--ion-color-tint: var(--ion-color-cinza-tint);
+}
+
 :root {
+  --ion-color-preto: #2d2d2d;
+	--ion-color-preto-rgb: 45,45,45;
+	--ion-color-preto-contrast: #ffffff;
+	--ion-color-preto-contrast-rgb: 255,255,255;
+	--ion-color-preto-shade: #282828;
+	--ion-color-preto-tint: #424242;
+
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
