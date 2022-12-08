@@ -20,31 +20,31 @@
       </ion-card-header>
 
       <ion-card-content>
-        <form>
+        <form [formGroup]="formRegistro">
           <ion-item color="cinza-claro">
             <ion-label position="floating">Nome: </ion-label>
-            <ion-input type="text" placeholder="Insira seu nome"></ion-input>
+            <ion-input formControlName="nome" type="text" placeholder="Insira seu nome"></ion-input>
           </ion-item>
           <ion-item color="cinza-claro">
             <ion-label position="floating">CPF: </ion-label>
-            <ion-input type="text" placeholder="Ex: 000.000.000-00"></ion-input>
+            <ion-input formControlName="cpf" type="text" placeholder="Ex: 000.000.000-00"></ion-input>
           </ion-item>
           <ion-item color="cinza-claro">
             <ion-label position="floating">E-mail: </ion-label>
-            <ion-input type="email" placeholder="Ex: abc@gmail.com"></ion-input>
+            <ion-input formControlName="email" type="email" placeholder="Ex: abc@gmail.com"></ion-input>
           </ion-item>
           <ion-item color="cinza-claro">
             <ion-label position="floating">Senha: </ion-label>
-            <ion-input type="password" placeholder="Insira sua Senha"></ion-input>
+            <ion-input formControlName="senha" type="password" placeholder="Insira sua Senha"></ion-input>
           </ion-item>
           <ion-item color="cinza-claro">
             <ion-label position="floating" placeholder="Insira sua senha novamente">Confirmar Senha: </ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input formControlName="confirmaSenha" type="password"></ion-input>
           </ion-item>
         </form>
 
         <div id="botoes">
-          <ion-button color="success" id="botao" routerLink="#">Salvar</ion-button>
+          <ion-button (click)="salvarRegistro()" color="success" id="botao" routerLink="#">Salvar</ion-button>
           <ion-button id="botao" routerLink="/log-in">Log-in</ion-button>
         </div>
       </ion-card-content>
