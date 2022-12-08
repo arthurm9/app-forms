@@ -9,9 +9,10 @@ ion-content {
 }
 
 #container {
+  border-radius: 20px;
   width: 80%;
   position: absolute;
-  top: 50%;
+  top: 54%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -23,6 +24,7 @@ ion-content {
     text-align: center;
     margin: 5%;
   }
+
   display: block;
 }
 
