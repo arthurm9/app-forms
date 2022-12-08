@@ -17,7 +17,6 @@ import { Drivers, Storage } from '@ionic/storage';
             IonicModule.forRoot(),
             AppRoutingModule,
             IonicStorageModule.forRoot({
-              name: '__mydb',
               driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
             })
           ],
