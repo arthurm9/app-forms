@@ -2,6 +2,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.msg-erro {
+  color: red;
+  clear: both;
+  font-size: 10px;
+  position: relative;
+}
+
 ion-content {
   height: 200px;
   display: flex;
