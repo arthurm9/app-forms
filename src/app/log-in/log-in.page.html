@@ -10,7 +10,9 @@
   <div id="container">
     <ion-card color="cinza">
       <div id="imagem">
-        <img src="https://ouch-cdn2.icons8.com/eUWYDaN244x5WYFqjxZMPxFLYHEvAOsgIUiRu9xwpd4/rs:fit:256:282/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNzE3/L2RkMzg4ZjhmLTI4/OWYtNGQ5MS05NGIx/LTdmN2EzMTE3ZDk5/Yi5zdmc.png" alt="imagem-login">
+        <img
+          src="https://ouch-cdn2.icons8.com/eUWYDaN244x5WYFqjxZMPxFLYHEvAOsgIUiRu9xwpd4/rs:fit:256:282/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNzE3/L2RkMzg4ZjhmLTI4/OWYtNGQ5MS05NGIx/LTdmN2EzMTE3ZDk5/Yi5zdmc.png"
+          alt="imagem-login">
       </div>
       <ion-card-header>
         <ion-card-title>Log-in</ion-card-title>
@@ -18,19 +20,21 @@
       </ion-card-header>
 
       <ion-card-content>
-        <ion-item color="cinza-claro" lines="none">
-          <ion-label>E-mail: </ion-label>
-          <ion-input type="email" placeholder="abc@gmail.com"></ion-input>
-        </ion-item>
-        <ion-item  color="cinza-claro" lines="none">
-          <ion-label>Senha: </ion-label>
-          <ion-input type="password"></ion-input>
-        </ion-item>
-        <div id="botoes">
-          <ion-button color="success" id="botao" routerLink="#">Entrar</ion-button>
-          <ion-button id="botao" routerLink="/registro">Registrar-se</ion-button>
-        </div>
-        <ion-label id="esqueceu" routerLink="#">Esqueceu a senha?</ion-label>
+        <form>
+          <ion-item color="cinza-claro">
+            <ion-label position="floating">E-mail: </ion-label>
+            <ion-input type="email" placeholder="Insira seu e-mail"></ion-input>
+          </ion-item>
+          <ion-item color="cinza-claro">
+            <ion-label position="floating">Senha: </ion-label>
+            <ion-input type="password" placeholder="Insira sua senha"></ion-input>
+          </ion-item>
+          <div id="botoes">
+            <ion-button color="success" id="botao" routerLink="#">Entrar</ion-button>
+            <ion-button id="botao" routerLink="/registro">Registrar-se</ion-button>
+          </div>
+          <ion-label id="esqueceu" routerLink="#">Esqueceu a senha?</ion-label>
+        </form>
       </ion-card-content>
     </ion-card>
   </div>
