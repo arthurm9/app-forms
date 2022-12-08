@@ -17,7 +17,7 @@ export class RegistroPage implements OnInit {
         )
       ],
       cpf: ['', Validators.compose(
-        [Validators.required, Validators.minLength(11)]
+        [Validators.required]
         )
       ],
       email: ['', Validators.compose(
