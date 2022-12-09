@@ -1,6 +1,12 @@
 <ion-header class="ion-no-border" >
   <ion-toolbar color="dark">
-    <ion-title class="ion-text-center">USUÁRIOS</ion-title>
+    <ion-title style="font-weight: bold; font-size: 1.5rem;" class="ion-text-center">USUÁRIOS</ion-title>
+    <ion-back-button slot="start" defaultHref="/registro"></ion-back-button>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/registro" slot="icon-only">
+        <ion-icon style="font-size: 1.6rem;" name="person-add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
