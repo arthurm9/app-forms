@@ -1,5 +1,4 @@
 import { StorageService } from './../services/storage.service';
-import { CpfValidator } from './../validators/cpf-validator';
 import { comparaValidator } from './../validators/compara-validator';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
@@ -53,10 +52,8 @@ export class RegistroPage implements OnInit {
         [Validators.required, Validators.minLength(3)]
         )
       ],
-      cpf: ['', Validators.compose(
-        [Validators.required, /*CpfValidator.cpfValido*/]
-        )
-      ],
+      cpf: ['', Validators.required],
+
       email: ['', Validators.compose(
         [Validators.required, Validators.email]
         )
