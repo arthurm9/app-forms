@@ -1,8 +1,11 @@
 <ion-header class="ion-no-border" [translucent]="true">
   <ion-toolbar color="dark">
-    <ion-title style="margin-left: 15%;" class="ion-text-center">Produtos</ion-title>
+    <ion-title class="ion-text-center">Produtos</ion-title>
+    <ion-back-button slot="start" defaultHref="/log-in"></ion-back-button>
     <ion-buttons slot="end">
-      <ion-button routerLink="/cadastro-produtos" slot="icon-only"><ion-icon name="bag-add"></ion-icon></ion-button>
+      <ion-button routerLink="/cadastro-produtos" slot="icon-only">
+        <ion-icon name="bag-add"></ion-icon>
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -19,9 +22,9 @@
     <ion-item color="cinza">
       <ion-label>
         <div>
-          <h1>{{user.nome}}</h1>
+          <h1>{{user.nome}} - R${{user.preco}}</h1>
           <span style="float: right;">{{user.validade}}</span>
-          <p>{{user.descricao}}</p>
+          <p style="color: #eee">{{user.descricao}}</p>
         </div>
       </ion-label>
     </ion-item>
