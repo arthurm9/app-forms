@@ -20,17 +20,27 @@
       </ion-card-header>
 
       <ion-card-content>
-        <form>
+        <form [formGroup]="formLogin">
           <ion-item color="cinza-claro">
             <ion-label style="color:darkgray" position="floating">E-mail</ion-label>
-            <ion-input type="email" placeholder="Insira seu e-mail"></ion-input>
+            <ion-input formControlName="email" type="email" placeholder="Insira seu email"></ion-input>
+
+            <ng-container *ngFor="let erro of mensagens.email">
+              <span class="msg-erro" *ngIf="formLogin.get('email')?.hasError(erro.tipo) &&
+              (formLogin.get('email')?.dirty || formLogin.get('email')?.touched)">{{erro.mensagem}}</span>
+            </ng-container>
           </ion-item>
           <ion-item color="cinza-claro">
             <ion-label style="color:darkgray" position="floating">Senha</ion-label>
-            <ion-input type="password" placeholder="Insira sua senha"></ion-input>
+            <ion-input formControlName="senha" type="password" placeholder="Insira sua Senha"></ion-input>
+
+            <ng-container *ngFor="let erro of mensagens.senha">
+              <span class="msg-erro" *ngIf="formLogin.get('senha')?.hasError(erro.tipo) &&
+              (formLogin.get('senha')?.dirty || formLogin.get('senha')?.touched)">{{erro.mensagem}}</span>
+            </ng-container>
           </ion-item>
           <div id="botoes">
-            <ion-button color="success" id="botao" routerLink="/produtos">Entrar</ion-button>
+            <ion-button color="success" id="botao" (click)="salvarLogin()">Entrar</ion-button>
             <ion-button id="botao" routerLink="/registro">Registrar-se</ion-button>
           </div>
           <ion-label id="esqueceu" routerLink="/esqueceu-senha">Esqueceu a senha?</ion-label>
