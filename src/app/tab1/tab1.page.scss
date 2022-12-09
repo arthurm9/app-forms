@@ -2,6 +2,11 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+ion-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
 ion-content {
   height: 200px;
   display: flex;
@@ -22,6 +27,9 @@ ion-content {
     display: flex;
     text-align: center;
     margin: 5%;
+    justify-content: center;
+    --border-radius: 100px;
+    font-weight: bold;
   }
   display: block;
 }
