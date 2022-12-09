@@ -1,16 +1,22 @@
+import { StorageService } from './../services/storage.service';
 import { CpfValidator } from './../validators/cpf-validator';
 import { comparaValidator } from './../validators/compara-validator';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms'
+import { Usuario } from '../models/Usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
   styleUrls: ['./registro.page.scss'],
 })
+
 export class RegistroPage implements OnInit {
 
   formRegistro: FormGroup;
+
+  usuario: Usuario = new Usuario();
 
   mensagens = {
     nome: [
@@ -38,7 +44,10 @@ export class RegistroPage implements OnInit {
     ],
   };
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder,
+              private storageService: StorageService,
+              private route: Router
+    ) {
     this.formRegistro = this.formBuilder.group({
       nome: ['', Validators.compose(
         [Validators.required, Validators.minLength(3)]
@@ -53,11 +62,11 @@ export class RegistroPage implements OnInit {
         )
       ],
       senha: ['', Validators.compose(
-        [Validators.required, Validators.minLength(8)]
+        [Validators.required, Validators.minLength(6)]
         )
       ],
       confirmaSenha: ['', Validators.compose(
-        [Validators.required, Validators.minLength(8)]
+        [Validators.required, Validators.minLength(6)]
         )
       ],
     }, {
@@ -67,8 +76,17 @@ export class RegistroPage implements OnInit {
 
   }
 
-  salvarRegistro() {
-    console.log('Formulário: ', this.formRegistro.valid);
+  async salvarRegistro() {
+    if(this.formRegistro.valid){
+      this.usuario.nome = this.formRegistro.value.nome;
+      this.usuario.cpf = this.formRegistro.value.cpf;
+      this.usuario.email = this.formRegistro.value.email;
+      this.usuario.senha = this.formRegistro.value.senha;
+      await this.storageService.set(this.usuario.email, this.usuario);
+      this.route.navigateByUrl('/usuarios');
+    } else {
+      alert('Formulário Inválido!');
+    }
   }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 export class Usuario {
-  nome?: String;
-  cpf?: String;
-  email?: String;
-  senha?: String;
+  nome: string;
+  cpf: string;
+  email: string;
+  senha: string;
 }

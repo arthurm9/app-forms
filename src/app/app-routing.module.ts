@@ -13,7 +13,19 @@ const routes: Routes = [
   {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },  {
+    path: 'usuarios',
+    loadChildren: () => import('./usuarios/usuarios.module').then( m => m.UsuariosPageModule)
+  },
+  {
+    path: 'produtos',
+    loadChildren: () => import('./produtos/produtos.module').then( m => m.ProdutosPageModule)
+  },
+  {
+    path: 'cadastro-produtos',
+    loadChildren: () => import('./cadastro-produtos/cadastro-produtos.module').then( m => m.CadastroProdutosPageModule)
   }
+
 ];
 @NgModule({
   imports: [

@@ -1,0 +1,77 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/produtos"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="dark">
+  <div id="container">
+    <ion-card color="cinza">
+      <div id="imagem">
+        <img
+          src="https://ouch-cdn2.icons8.com/9W9CRwU5ZIv8ldmAAzoF1kNe7asKvDwaOYkunHW7uhw/rs:fit:256:205/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9zdmcvNzcw/Lzc0YmEzMmYwLTFj/YTAtNDg0Ny04M2Vm/LTBmNGFkMDg3MjFk/MS5zdmc.png"
+          alt="imagem-produtos">
+      </div>
+      <ion-card-header>
+        <ion-card-title>Cadastre seu Produto!</ion-card-title>
+        <ion-card-subtitle>Informe os dados corretamente</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <form [formGroup]="formCadastro">
+
+          <ion-item color="cinza-claro">
+            <ion-label position="floating">Nome: </ion-label>
+            <ion-input formControlName="nome" type="text" placeholder="Insira seu nome"></ion-input>
+
+            <ng-container *ngFor="let erro of mensagens.nome">
+              <span class="msg-erro" *ngIf="formCadastro.get('nome')?.hasError(erro.tipo) &&
+              (formCadastro.get('nome')?.dirty || formCadastro.get('nome')?.touched)">{{erro.mensagem}}</span>
+            </ng-container>
+
+          </ion-item>
+
+          <ion-item color="cinza-claro">
+            <ion-label position="floating">Descrição: </ion-label>
+            <ion-input formControlName="descricao" type="text" placeholder="Descrição do produto"></ion-input>
+
+            <ng-container *ngFor="let erro of mensagens.descricao">
+              <span class="msg-erro" *ngIf="formCadastro.get('descricao')?.hasError(erro.tipo) &&
+              (formCadastro.get('descricao')?.dirty || formCadastro.get('descricao')?.touched)">{{erro.mensagem}}</span>
+            </ng-container>
+
+          </ion-item>
+
+          <ion-item color="cinza-claro">
+            <ion-label position="floating">Validade: </ion-label>
+            <ion-input formControlName="validade" type="date" placeholder="Ex: 01/01/2000"></ion-input>
+
+            <ng-container *ngFor="let erro of mensagens.validade">
+              <span class="msg-erro" *ngIf="formCadastro.get('validade')?.hasError(erro.tipo) &&
+              (formCadastro.get('validade')?.dirty || formCadastro.get('validade')?.touched)">{{erro.mensagem}}</span>
+            </ng-container>
+
+          </ion-item>
+
+          <ion-item color="cinza-claro">
+            <ion-label position="floating">Preço: </ion-label>
+            <ion-input formControlName="preco" type="number" placeholder="Ex: 30,99"></ion-input>
+
+            <ng-container *ngFor="let erro of mensagens.preco">
+              <span class="msg-erro" *ngIf="formCadastro.get('preco')?.hasError(erro.tipo) &&
+              (formCadastro.get('preco')?.dirty || formCadastro.get('preco')?.touched)">{{erro.mensagem}}</span>
+            </ng-container>
+
+          </ion-item>
+
+        </form>
+
+        <div id="botoes">
+          <ion-button (click)="salvarCadastro()" color="success" id="botao">Salvar</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
