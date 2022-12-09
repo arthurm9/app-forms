@@ -24,6 +24,10 @@ const routes: Routes = [
   {
     path: 'cadastro-produtos',
     loadChildren: () => import('./cadastro-produtos/cadastro-produtos.module').then( m => m.CadastroProdutosPageModule)
+  },
+  {
+    path: 'esqueceu-senha',
+    loadChildren: () => import('./esqueceu-senha/esqueceu-senha.module').then( m => m.EsqueceuSenhaPageModule)
   }
 
 ];
