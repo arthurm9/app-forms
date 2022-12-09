@@ -15,15 +15,15 @@
           alt="imagem-registro">
       </div>
       <ion-card-header>
-        <ion-card-title>Registre-se</ion-card-title>
-        <ion-card-subtitle>Faça seu cadastro</ion-card-subtitle>
+        <ion-card-title style="font-weight: bold; font-size: 1.5rem;" class="ion-text-center">REGISTRAR-SE</ion-card-title>
+        <ion-card-subtitle style="color: #eee;" class="ion-text-center">faça seu cadastro</ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
         <form [formGroup]="formRegistro">
 
           <ion-item color="cinza-claro">
-            <ion-label position="floating">Nome: </ion-label>
+            <ion-label style="color:darkgray" position="floating">Nome: </ion-label>
             <ion-input formControlName="nome" type="text" placeholder="Insira seu nome"></ion-input>
 
             <ng-container *ngFor="let erro of mensagens.nome">
@@ -34,7 +34,7 @@
           </ion-item>
 
           <ion-item color="cinza-claro">
-            <ion-label position="floating">CPF: </ion-label>
+            <ion-label style="color:darkgray" position="floating">CPF: </ion-label>
             <ion-input formControlName="cpf" type="text" placeholder="Ex: 000.000.000-00"></ion-input>
 
             <ng-container *ngFor="let erro of mensagens.cpf">
@@ -45,7 +45,7 @@
           </ion-item>
 
           <ion-item color="cinza-claro">
-            <ion-label position="floating">E-mail: </ion-label>
+            <ion-label style="color:darkgray" position="floating">E-mail: </ion-label>
             <ion-input formControlName="email" type="email" placeholder="Ex: abc@gmail.com"></ion-input>
 
             <ng-container *ngFor="let erro of mensagens.email">
@@ -56,7 +56,7 @@
           </ion-item>
 
           <ion-item color="cinza-claro">
-            <ion-label position="floating">Senha: </ion-label>
+            <ion-label style="color:darkgray" position="floating">Senha: </ion-label>
             <ion-input formControlName="senha" type="password" placeholder="Insira sua Senha"></ion-input>
 
             <ng-container *ngFor="let erro of mensagens.senha">
@@ -67,7 +67,7 @@
           </ion-item>
 
           <ion-item color="cinza-claro">
-            <ion-label position="floating" placeholder="Insira sua senha novamente">Confirmar Senha: </ion-label>
+            <ion-label style="color:darkgray" position="floating" placeholder="Insira sua senha novamente">Confirmar Senha: </ion-label>
             <ion-input formControlName="confirmaSenha" type="password"></ion-input>
 
             <ng-container *ngFor="let erro of mensagens.confirmaSenha">

@@ -15,25 +15,25 @@
           alt="imagem-login">
       </div>
       <ion-card-header>
-        <ion-card-title>Log-in</ion-card-title>
-        <ion-card-subtitle>Entre ou cadastre-se</ion-card-subtitle>
+        <ion-card-title style="font-weight: bold; font-size: 1.5rem;" class="ion-text-center">LOG-IN</ion-card-title>
+        <ion-card-subtitle style="color: #eee;" class="ion-text-center">entre ou cadastre-se</ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
         <form>
           <ion-item color="cinza-claro">
-            <ion-label position="floating">E-mail: </ion-label>
+            <ion-label style="color:darkgray" position="floating">E-mail</ion-label>
             <ion-input type="email" placeholder="Insira seu e-mail"></ion-input>
           </ion-item>
           <ion-item color="cinza-claro">
-            <ion-label position="floating">Senha: </ion-label>
+            <ion-label style="color:darkgray" position="floating">Senha</ion-label>
             <ion-input type="password" placeholder="Insira sua senha"></ion-input>
           </ion-item>
           <div id="botoes">
             <ion-button color="success" id="botao" routerLink="/produtos">Entrar</ion-button>
             <ion-button id="botao" routerLink="/registro">Registrar-se</ion-button>
           </div>
-          <ion-label id="esqueceu" routerLink="#">Esqueceu a senha?</ion-label>
+          <ion-label id="esqueceu" routerLink="/esqueceu-senha">Esqueceu a senha?</ion-label>
         </form>
       </ion-card-content>
     </ion-card>
